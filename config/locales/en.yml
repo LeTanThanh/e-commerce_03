@@ -2,3 +2,54 @@ en:
   layouts:
     application:
       app_title: "E-Commerce"
+    footer:
+      about: "About"
+      app_name: "E-COMMERCE"
+      by: "by"
+      contact: "Contact"
+      framgia_vn: "Framgia Vietnam Co., Ltd"
+      the: "The"
+    header:
+      app_name: "E-COMMERCE"
+      help: "Help"
+      home: "Home"
+      log_in: "Log in"
+
+  static_pages:
+    about:
+      about: "Please contact for more information about us"
+      framgia_vn: "Framgia Vietnam Co., Ltd"
+      heading: "About"
+      title: "About"
+    contact:
+      contact: "Contact"
+      danang: "Da Nang"
+      danang_address: "6F, Vinh Trung Plaza, 255~257 Hung Vuong Str., Vinh Trung
+        ward, Thanh Khe district, Da Nang"
+      framgia_vn: "Framgia Vietnam Co., Ltd"
+      heading: "Contact"
+      title: "Contact"
+      hanoi: "Ha Noi (Head Office)"
+      hanoi_address: "13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road,
+        Nam Tu Liem District., Ha Noi"
+      hochiminh: "Ho Chi Minh"
+      hochiminh_address: "8F Nice building, 467 Dien Bien Phu Str., Ward 25,
+        Binh Thanh district, Ho Chi Minh"
+      lab: "Laboratory"
+      lab_address: "9F HTP Building, 434 Tran Khat Chan, 1km from Bach Khoa
+        University, Ha Noi"
+    help:
+      help: "Please contact for help"
+      framgia_vn: "Framgia Vietnam Co., Ltd"
+      heading: "Help"
+      title: "Help"
+      home:
+      app_name: "E-Commerce"
+      this_is_the_home_page_for: "This is the home page for"
+      title: "Home"
+      welcome_to: "Welcome to"
+    home:
+      app_name: "E-Commerce"
+      this_is_the_home_page_for: "This is the home page for"
+      title: "Home"
+      welcome_to: "Welcome to"
