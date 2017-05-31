@@ -1,4 +1,55 @@
 en:
+  dictionary:
+    app_name: &app_name "E-Commerce"
+    contact: &contact "Contact"
+    framgia_vn: &framgia_vn "Framgia Vietnam Co"
+    link_framgia_vn: &link_framgia_vn "http://recruit.framgia.vn/"
+    
   layouts:
     application:
       app_title: "E-Commerce"
+    footer:
+      about: "About"
+      app_name: *app_name
+      by: "by"
+      contact: *contact
+      framgia_vn: *framgia_vn
+      the: "The"
+      link_framgia_vn: *link_framgia_vn
+    header:
+      app_name: *app_name
+      help: "Help"
+  static_pages:
+    about:
+      about: "Please contact for more information about us"
+      framgia_vn: *framgia_vn
+      heading: "About"
+      title: "About"
+      link_framgia_vn: *link_framgia_vn
+    contact:
+      contact: *contact
+      danang: "Da Nang"
+      danang_address: "6F, Vinh Trung Plaza, 255~257 Hung Vuong Str., Vinh Trung
+         ward, Thanh Khe district, Da Nang"
+      framgia_vn: *framgia_vn
+      heading: "Contact"
+      title: "Contact"
+      hanoi: "Ha Noi (Head Office)"
+      hanoi_address: "13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road,
+         Nam Tu Liem District., Ha Noi"
+      hochiminh: "Ho Chi Minh"
+      hochiminh_address: "8F Nice building, 467 Dien Bien Phu Str., Ward 25,
+         Binh Thanh district, Ho Chi Minh"
+      lab: "Laboratory"
+      lab_address: "9F HTP Building, 434 Tran Khat Chan, 1km from Bach Khoa
+         University, Ha Noi"
+      link_framgia_vn: *link_framgia_vn
+    help:
+      framgia_vn: *framgia_vn
+      heading: "Help"
+      title: "Help"
+      app_name: *app_name
+      this_is_the_home_page_for: "This is the home page for"
+      link_framgia_vn: *link_framgia_vn
+    home:
+      welcome_to: "Welcome to"
