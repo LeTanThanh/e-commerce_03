@@ -4,7 +4,8 @@ en:
     contact: &contact "Contact"
     framgia_vn: &framgia_vn "Framgia Vietnam Co"
     link_framgia_vn: &link_framgia_vn "http://recruit.framgia.vn/"
-    
+
+  welcome_to_shop: "Welcome to the Shop!"
   layouts:
     application:
       app_title: "E-Commerce"
@@ -53,3 +54,10 @@ en:
       link_framgia_vn: *link_framgia_vn
     home:
       welcome_to: "Welcome to"
+  sessions:
+    new:
+      new_user: "New user"
+      sign_up_now: "Sign Up Now"
+      log_in: "Log In"
+    create:
+      invalid_email_password: "Invalid email/password combination!"
