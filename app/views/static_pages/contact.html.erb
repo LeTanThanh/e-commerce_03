@@ -1,0 +1,44 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".heading" %></h1>
+<p>
+  <%= t ".contact" %>
+  <%= link_to t(".framgia_vn"), t(".link_framgia_vn"), target: :blank %>
+  <div class="container">
+    <div class="col-md-3">
+      <h5>
+        <span class="glyphicon glyphicon-map-marker"></span>
+        <%= t ".hanoi" %>
+      </h5>
+      <p>
+        <%= t ".hanoi_address" %>
+      </p>
+    </div>
+    <div class="col-md-3">
+      <h5>
+        <span class="glyphicon glyphicon-map-marker"></span>
+        <%= t ".lab" %>
+      </h5>
+      <p>
+        <%= t ".lab_address" %>
+      </p>
+    </div>
+    <div class="col-md-3">
+      <h5>
+        <span class="glyphicon glyphicon-map-marker"></span>
+        <%= t ".hochiminh" %>
+      </h5>
+      <p>
+        <%= t ".hochiminh_address" %>
+      </p>
+    </div>
+    <div class="col-md-3">
+      <h5>
+        <span class="glyphicon glyphicon-map-marker"></span>
+        <%= t ".danang" %>
+      </h5>
+      <p>
+        <%= t ".danang_address" %>
+      </p>
+    </div>
+  </div>
+</p>
