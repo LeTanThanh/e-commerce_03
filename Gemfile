@@ -13,6 +13,7 @@ gem "coffee-rails", "4.2.1"
 gem "jquery-rails", "4.1.1"
 gem "jbuilder", "2.4.1"
 gem "bcrypt", "3.1.11"
+gem "config"
 gem "bootstrap-sass", "3.3.6"
 
 group :development, :test do
