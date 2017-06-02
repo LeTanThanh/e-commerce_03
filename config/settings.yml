@@ -1,4 +1,12 @@
+gravatar:
+  gravatar_image_size: 80
+request:
+  max_status: 2
+  maximum_length_content: 1000
+  min_status: 0
 user:
   name_size_max: 50
   email_length: 50
   password_min: 6
+will_paginate:
+  per_page: 10

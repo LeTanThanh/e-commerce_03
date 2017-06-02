@@ -1,11 +1,22 @@
 en:
+  admin:
+    requests:
+      index:
+        title: "Manage Requests"
+        heading: "Manage Requests"
+
   dictionary:
     app_name: &app_name "E-Commerce"
     contact: &contact "Contact"
     framgia_vn: &framgia_vn "Framgia Vietnam Co"
     link_framgia_vn: &link_framgia_vn "http://recruit.framgia.vn/"
 
-  welcome_to_shop: "Welcome to the Shop!"
+  flash:
+    danger:
+      you_have_to_login: "You have to login"
+      you_are_not_admin_user: "You're not admin user"
+      update_request_status_fail: "Update request status fail"
+
   layouts:
     application:
       app_title: "E-Commerce"
@@ -18,8 +29,26 @@ en:
       the: "The"
       link_framgia_vn: *link_framgia_vn
     header:
+      about: "About"
       app_name: *app_name
+      categories: "Categories"
       help: "Help"
+      home: "Home"
+      import: "Import"
+      log_in: "Log In"
+      manage: "Manage"
+      orders: "Orders"
+      products: "Products"
+      requests: "Requests"
+      sign_up: "Sign Up"
+      users: "Users"
+
+  requests:
+    request:
+      ago: "ago"
+      no: "No."
+      requested: "Requested"
+
   static_pages:
     about:
       about: "Please contact for more information about us"
@@ -54,6 +83,7 @@ en:
       link_framgia_vn: *link_framgia_vn
     home:
       welcome_to: "Welcome to"
+
   sessions:
     new:
       new_user: "New user"
@@ -61,3 +91,5 @@ en:
       log_in: "Log In"
     create:
       invalid_email_password: "Invalid email/password combination!"
+
+  welcome_to_shop: "Welcome to the Shop!"

@@ -13,8 +13,11 @@ gem "coffee-rails", "4.2.1"
 gem "jquery-rails", "4.1.1"
 gem "jbuilder", "2.4.1"
 gem "bcrypt", "3.1.11"
-gem "config"
 gem "bootstrap-sass", "3.3.6"
+gem "config", "1.4.0"
+gem "ffaker", "2.5.0"
+gem "will_paginate", "3.1.0"
+gem "bootstrap-will_paginate", "0.0.10"
 
 group :development, :test do
   gem "sqlite3", "1.3.12"
