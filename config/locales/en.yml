@@ -17,8 +17,10 @@ en:
       you_have_to_login: "You have to login"
       you_are_not_admin_user: "You're not admin user"
       update_request_status_fail: "Update request status fail"
+      update_user_fail: "Update user fail"
       user_not_found: "User not found"
     success:
+      update_user_success: "Update user success"
       welcome_to_shop: "Welcome to the Shop!"
 
   layouts:
@@ -52,6 +54,11 @@ en:
       ago: "ago"
       no: "No."
       requested: "Requested"
+
+  shared:
+    error_messages:
+      error: "error"
+      the_form_contains: "The form contains"
 
   static_pages:
     about:
@@ -97,6 +104,15 @@ en:
       invalid_email_password: "Invalid email/password combination!"
 
   users:
+    edit:
+      button_text: "Update My Profile"
+      heading: "Update Profile"
+      title: "Update Profile"
+    new:
+      button_text: "Sign Up My Account"
+      heading: "Sign Up"
+      sign_up: "Sign Up"
+      title: "Sign Up"
     show:
       title: "User Profile"
       heading: "User Profile"

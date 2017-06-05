@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :verify_login_user!, :load_user, :verify_user!, only: :show
+  before_action :verify_login_user!, :load_user, :verify_user!,
+    only: [:show, :edit, :update]
 
   def new
     @user = User.new
@@ -16,6 +17,19 @@ class UsersController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:success] =  t "flash.success.update_user_success"
+      redirect_to @user
+    else
+      flash.now[:danger] = t "flash.danger.update_user_fail"
+      render :edit
+    end
   end
 
   private

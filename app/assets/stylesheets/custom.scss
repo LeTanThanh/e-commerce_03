@@ -9,6 +9,7 @@ $strong-mine-shaft: #333333;
 $light-silver: #cccccc;
 $fern: #5cb85c;
 $mexican-red: #ac2925;
+$silver: #bbbbbb;
 
 body {
   padding-top: 60px;
@@ -129,6 +130,48 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
+}
+
+input, textarea, select, .uneditable-input {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 1px solid $silver;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+input {
+  height: auto !important;
+}
+
+#error-explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.checkbox {
+  margin-bottom: 10px;
+  margin-top: -10px;
+  span {
+    font-weight: normal;
+    margin-left: 20px;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
 }
 
 .vertical-menu {
