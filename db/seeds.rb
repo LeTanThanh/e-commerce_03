@@ -15,3 +15,44 @@ users.each do |user|
       created_at: FFaker::Time.datetime
   end
 end
+
+5.times do
+  Category.create! name: FFaker::Product::brand
+end
+
+categories = Category.all
+categories.each do |category|
+  20.times do
+    name = FFaker::Product.product
+    price = 1000 * (rand(50) + 50)
+    quantity = (rand(10) + 10)
+    picture = File.open(File.join Rails.root,
+      "/app/assets/images/seed/product/#{rand 10}.jpg")
+    description = FFaker::Lorem.paragraph
+    category.products.create! name: name, price: price, picture: picture,
+      quantity: quantity, description: description
+  end
+end
+
+users.each do |user|
+  3.times do
+    user.orders.create! total_price: 0
+  end
+end
+
+orders = Order.all
+orders.each do |order|
+  total_price = 0
+  products = []
+  products << Product.find(10  +rand(10))
+  products << Product.find(20 + rand(10))
+  products << Product.find(30 + rand(10))
+  products.each do |product|
+    price = product.price
+    quantity = 1 + rand(3)
+    total_price += price * quantity
+    order.order_details.create! order: order, product: product,
+      price: price, quantity: quantity
+  end
+  order.update_attributes total_price: total_price
+end

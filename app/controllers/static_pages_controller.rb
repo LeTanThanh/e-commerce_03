@@ -1,4 +1,10 @@
 class StaticPagesController < ApplicationController
+  def home
+    @hot_trend_products = Product.hot_trend.select :id, :picture
+    @products = Product.select(:id, :picture, :name, :price, :quantity)
+      .paginate page: params[:page], per_page: Settings.will_paginate.per_page_product
+  end
+
   def show
     if valid_page?
       render template: "static_pages/#{params[:page]}"

@@ -99,7 +99,8 @@ en:
       this_is_the_home_page_for: "This is the home page for"
       link_framgia_vn: *link_framgia_vn
     home:
-      welcome_to: "Welcome to"
+      all_products: "All Products"
+      hot_trend_products: "Hot Trend Products"
 
   sessions:
     new:
@@ -130,4 +131,4 @@ en:
       update_profile: "Update Profile"
       cart: "Cart"
       orders: "Orders"
-      aend_suggest: "Send Suggest"
+      send_suggest: "Send Suggest"
