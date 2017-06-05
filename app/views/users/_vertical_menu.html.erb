@@ -11,7 +11,7 @@
   <%= link_to "#", class: index == 3 ? "active" : "" do %>
     <span class="glyphicon glyphicon-gift"></span> <%= t ".orders" %>
   <% end %>
-  <%= link_to "#", class: index == 4 ? "active" : "" do %>
+  <%= link_to requests_path, class: index == 4 ? "active" : "" do %>
     <span class="glyphicon glyphicon-comment"></span> <%= t ".send_suggest" %>
   <% end %>
 </div>

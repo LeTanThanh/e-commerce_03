@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post "admin/requests/:id", to: "admin/requests#update", as: :admin_update_request
   patch "users/:id/edit", to: "users#update", as: :update_user
   resources :users
+  resources :requests
+  resources :users
   namespace :admin do
     resources :requests
   end
