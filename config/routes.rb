@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   patch "users/:id/edit", to: "users#update", as: :update_user
   resources :users
   resources :requests
-  resources :users
   resources :products
   namespace :admin do
     resources :requests
