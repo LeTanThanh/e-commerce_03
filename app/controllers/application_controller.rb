@@ -19,4 +19,17 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t "flash.danger.you_are_not_admin_user"
     redirect_to root_url
   end
+
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+    flash[:danger] = t "flash.danger.user_not_found"
+    redirect_to root_url
+  end
+
+  def verify_user!
+    return if @user.is_user? current_user
+    flash[:danger] = t "flash.danger.you_dont_have_permission"
+    redirect_to root_url
+  end
 end

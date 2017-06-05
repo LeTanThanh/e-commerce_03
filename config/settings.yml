@@ -1,5 +1,6 @@
 gravatar:
   gravatar_image_size: 80
+  gravatar_user_image_size: 200
 request:
   max_status: 2
   maximum_length_content: 1000

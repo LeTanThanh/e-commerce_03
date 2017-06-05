@@ -1,0 +1,17 @@
+<div class="vertical-menu">
+  <%= link_to current_user, class: index == 0 ? "active" : "" do %>
+    <span class="glyphicon glyphicon-user"></span> <%= t ".user_profile" %>
+  <% end %>
+  <%= link_to "#", class: index == 1 ? "active" : "" do %>
+    <span class="glyphicon glyphicon-cog"></span> <%= t ".update_profile" %>
+  <% end %>
+  <%= link_to "#", class: index == 2 ? "active" : "" do %>
+    <span class="glyphicon glyphicon-shopping-cart"></span> <%= t ".cart" %>
+  <% end %>
+  <%= link_to "#", class: index == 3 ? "active" : "" do %>
+    <span class="glyphicon glyphicon-gift"></span> <%= t ".orders" %>
+  <% end %>
+  <%= link_to "#", class: index == 4 ? "active" : "" do %>
+    <span class="glyphicon glyphicon-comment"></span> <%= t ".send_suggest" %>
+  <% end %>
+</div>
