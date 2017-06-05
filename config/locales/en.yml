@@ -13,9 +13,13 @@ en:
 
   flash:
     danger:
+      you_dont_have_permission: "You don't have permissionn to access this page"
       you_have_to_login: "You have to login"
       you_are_not_admin_user: "You're not admin user"
       update_request_status_fail: "Update request status fail"
+      user_not_found: "User not found"
+    success:
+      welcome_to_shop: "Welcome to the Shop!"
 
   layouts:
     application:
@@ -92,4 +96,16 @@ en:
     create:
       invalid_email_password: "Invalid email/password combination!"
 
-  welcome_to_shop: "Welcome to the Shop!"
+  users:
+    show:
+      title: "User Profile"
+      heading: "User Profile"
+      sign_in: "Sign In"
+      user_email: "User Email"
+      user_name: "User Name"
+    vertical_menu:
+      user_profile: "User Profile"
+      update_profile: "Update Profile"
+      cart: "Cart"
+      orders: "Orders"
+      send_suggest: "Send Suggest"

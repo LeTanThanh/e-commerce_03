@@ -1,0 +1,48 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <aside class="col-md-3">
+    <section class="user-info">
+      <h1>
+        <div class="col-md-3">
+          <%= gravatar_for current_user %>
+        </div>
+        <div class="col-md-9">
+          <span class="name"><%= current_user.name %></span>
+          <span class="email"><%= current_user.email %></span>
+        </div>
+      </h1>
+    </section>
+    <%= render partial: "vertical_menu", locals: {index: 0} %>
+  </aside>
+  <div class="col-md-9">
+    <h1><%= t ".heading" %></h1>
+    <div class="row">
+      <div class="col-md-3">
+        <%= gravatar_for current_user,
+          size: Settings.gravatar.gravatar_user_image_size %>
+      </div>
+      <div class="col-md-9">
+        <table class="table">
+          <tr>
+            <th><%= t ".user_name" %></th>
+            <td><%= current_user.name %></td>
+          </tr>
+          <tr>
+            <th><%= t ".user_email" %></th>
+            <td><%= current_user.email %></td>
+          </tr>
+          <tr>
+            <th><%= t ".sign_in" %></th>
+            <td><%= current_user.created_at.to_date %>
+              (<%= time_ago_in_words current_user.created_at %>)
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
