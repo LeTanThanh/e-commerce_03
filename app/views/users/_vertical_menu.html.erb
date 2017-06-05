@@ -2,7 +2,7 @@
   <%= link_to current_user, class: index == 0 ? "active" : "" do %>
     <span class="glyphicon glyphicon-user"></span> <%= t ".user_profile" %>
   <% end %>
-  <%= link_to "#", class: index == 1 ? "active" : "" do %>
+  <%= link_to update_user_path(current_user), class: index == 1 ? "active" : "" do %>
     <span class="glyphicon glyphicon-cog"></span> <%= t ".update_profile" %>
   <% end %>
   <%= link_to "#", class: index == 2 ? "active" : "" do %>

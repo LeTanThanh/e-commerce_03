@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   get "/admin/requests", to: "admin/requests#index", as: :admin_requests
   post "admin/requests/:id", to: "admin/requests#update", as: :admin_update_request
+  patch "users/:id/edit", to: "users#update", as: :update_user
   resources :users
   namespace :admin do
     resources :requests

@@ -1,0 +1,26 @@
+<% provide :title, t(".title") %>
+<% provide :button_text, t(".button_text") %>
+<div class="row">
+  <aside class="col-md-3">
+    <section class="user-info">
+      <h1>
+        <div class="col-md-3">
+          <%= gravatar_for current_user %>
+        </div>
+        <div class="col-md-9">
+          <span class="name"><%= current_user.name %></span>
+          <span class="email"><%= current_user.email %></span>
+        </div>
+      </h1>
+    </section>
+    <%= render partial: "vertical_menu", locals: {index: 1} %>
+  </aside>
+  <div class="col-md-9">
+    <h1><%= t ".heading" %></h1>
+    <div class="row">
+      <div class="col-md-12">
+        <%= render partial: "form", locals: {url: update_user_path(current_user)} %>
+      </div>
+    </div>
+  </div>
+</div>
