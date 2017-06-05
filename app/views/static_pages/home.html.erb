@@ -1,1 +1,22 @@
-<h1 class="text-center"><%= t ".welcome_to" %></h1>
+<div class="container">
+  <h3 class="title"><%= t ".hot_trend_products" %></h3>
+  <div class="row">
+    <div class="col-md-12">
+      <%= render partial: "products/hot_trend_product",
+        collection: @hot_trend_products %>
+      <a class="left carousel-control" id="pre-product">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+      </a>
+      <a class="right carousel-control" id="next-product">
+        <i class="glyphicon glyphicon-chevron-right"></i>
+      </a>
+    </div>
+  </div>
+  <h3 class="title"><%= t ".all_products" %></h3>
+  <div class="row">
+    <div class="col-md-12">
+      <%= render @products %>
+      <%= will_paginate @products %>
+    </div>
+  </div>
+</div>

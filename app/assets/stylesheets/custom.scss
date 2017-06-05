@@ -221,3 +221,24 @@ input {
     }
   }
 }
+
+.title {
+  margin-top: 50px;
+}
+
+.center-img {
+  display: block;
+  margin: 0 auto
+}
+
+.carousel-control {
+  width: 50px;
+}
+
+.product {
+  img {
+    width: 200px;
+    height: 300px;
+  }
+  margin-bottom: 20px;
+}

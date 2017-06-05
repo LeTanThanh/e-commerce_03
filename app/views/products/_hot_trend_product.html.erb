@@ -1,0 +1,6 @@
+<div class="col-md-3 product hot-trend-product
+  <%= (hot_trend_product_counter< 4) ? "show-init" : "hide-init" %>" >
+  <%= link_to hot_trend_product do %>
+    <%= image_tag hot_trend_product.picture.url, class: "center-img" %>
+  <% end %>
+</div>
