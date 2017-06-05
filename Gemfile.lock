@@ -329,6 +329,18 @@ DEPENDENCIES
   factory_girl_rails
   ffaker (= 2.5.0)
   guard-rspec
+  byebug (= 9.0.0)
+  coffee-rails (= 4.2.1)
+  config (= 1.4.0)
+  ffaker (= 2.5.0)
+  byebug (= 9.0.0)
+  coffee-rails (= 4.2.1)
+  config (= 1.4.0)
+  database_cleaner
+  eslint-rails
+  factory_girl_rails
+  ffaker (= 2.5.0)
+  guard-rspec
   jbuilder (= 2.4.1)
   jquery-rails (= 4.1.1)
   jshint

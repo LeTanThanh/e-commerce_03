@@ -1,0 +1,30 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <aside class="col-md-3">
+    <section class="user-info">
+      <h1>
+        <div class="col-md-3">
+          <%= gravatar_for current_user %>
+        </div>
+        <div class="col-md-9">
+          <span class="name"><%= current_user.name %></span>
+          <span class="email"><%= current_user.email %></span>
+        </div>
+      </h1>
+    </section>
+    <%= render partial: "users/vertical_menu", locals: {index: 4} %>
+  </aside>
+  <div class="col-md-9">
+    <h1><%= t ".heading" %></h1>
+    <div class="row">
+      <div class="col-md-12">
+        <%= form_for @request do |f| %>
+          <%= render "shared/error_messages", obj: f.object %>
+          <%= f.label :content %>
+          <%= f.text_area :content, class: "form-control" %>
+          <%= f.submit t(".button_text"), class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

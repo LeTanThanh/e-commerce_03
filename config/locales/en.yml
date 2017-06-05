@@ -13,13 +13,15 @@ en:
 
   flash:
     danger:
-      you_dont_have_permission: "You don't have permissionn to access this page"
-      you_have_to_login: "You have to login"
-      you_are_not_admin_user: "You're not admin user"
+      send_your_request_fail: "Send your request fail"
       update_request_status_fail: "Update request status fail"
       update_user_fail: "Update user fail"
       user_not_found: "User not found"
+      you_dont_have_permission: "You don't have permissionn to access this page"
+      you_have_to_login: "You have to login"
+      you_are_not_admin_user: "You're not admin user"
     success:
+      send_your_request_success: "Send your request success"
       update_user_success: "Update user success"
       welcome_to_shop: "Welcome to the Shop!"
 
@@ -50,6 +52,10 @@ en:
       users: "Users"
 
   requests:
+    index:
+      heading: "Send Suggest"
+      title: "Send Suggest"
+      button_text: "Send Suggest"
     request:
       ago: "ago"
       no: "No."
@@ -124,4 +130,4 @@ en:
       update_profile: "Update Profile"
       cart: "Cart"
       orders: "Orders"
-      send_suggest: "Send Suggest"
+      aend_suggest: "Send Suggest"
