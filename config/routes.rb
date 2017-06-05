@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   get "/signup",  to: "users#new"
   post "/signup",  to: "users#create"
   get "/login", to: "sessions#new"
-  get "/*page", to: "static_pages#show"
-
+  get "/admin/requests", to: "admin/requests#index", as: :admin_requests
+  post "admin/requests/:id", to: "admin/requests#update", as: :admin_update_request
   resources :users
+  namespace :admin do
+    resources :requests
+  end
+  get "/*page", to: "static_pages#show"
 end

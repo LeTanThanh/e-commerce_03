@@ -5,6 +5,10 @@ $boulder: #777;
 $emperor: #555;
 $gallery: #eaeaea;
 $mine-shaft: #222;
+$strong-mine-shaft: #333333;
+$light-silver: #cccccc;
+$fern: #5cb85c;
+$mexican-red: #ac2925;
 
 body {
   padding-top: 60px;
@@ -82,6 +86,94 @@ footer {
   li {
     float: left;
     margin-left: 15px;
+    }
+  }
+}
+
+aside {
+  section {
+    h1 {
+      font-size: 1.5em;
+      img {
+        margin-left: -15px;
+      }
+      letter-spacing: -1px;
+      margin: 0 0 3px;
+      text-align: left;
+      span {
+        margin-left: 10px;
+        &.name {
+          font-size: 1.0em;
+        }
+        &.email {
+          font-size: 0.8em;
+        }
+      }
+    }
+    padding: 10px 0;
+    span {
+      display: block;
+      line-height: 1.5;
+      margin-bottom: 5px;
+    }
+    .user-info {
+      margin-top: 20px;
+    }
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.vertical-menu {
+  a {
+    background-color: $gallery;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    &.active {
+      background-color: $mine-shaft;
+      color: white;
+    }
+    &:hover {
+      background-color: $light-silver;
+    }
+  }
+  span {
+    margin-right: 10px;
+  }
+  width: 100%;
+}
+
+.panel {
+  .request-heading {
+    margin-left: 1px;
+  }
+  .request-info-text {
+    color: white;
+    text-decoration: none;
+  }
+  .status {
+    border-radius: 5px;
+    padding: 3px 5px;
+    &.waiting {
+      background: white;
+      color: $strong-mine-shaft;
+    }
+    &.accept {
+      background: $fern;
+      color: white;
+    }
+    &.reject {
+      background: $mexican-red;
+      color: white;
     }
   }
 }

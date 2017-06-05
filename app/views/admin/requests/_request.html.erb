@@ -1,0 +1,46 @@
+<div class="panel panel-primary
+  request-container-<%= cal_request_index (cal_request_page_index page ||= 1),
+    request_counter %>">
+  <div class="panel-heading">
+    <div class="row request-heading">
+      <div class="col-md-9">
+        <div class="row">
+          <span class="glyphicon glyphicon-user"></span>
+          <%= t ".no" %> <%= (cal_request_index (cal_request_page_index page ||= 1), request_counter) + 1 %> |
+          <%= link_to request.user.name, "#", class: "request-info-text",
+            target: :blank %> |
+        </div>
+        <div class="row">
+          <small class="request-info-text">
+            <i>
+              <%= t ".requested" %> <%= time_ago_in_words request.created_at %>
+              <%= t ".ago" %>
+            </i>
+          </small>
+          <span class="status <%= Request.request_statuses.key request.status %>">
+            <%= Request.request_statuses.key(request.status).upcase %>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-3 request-control-
+        <%= cal_request_index (cal_request_page_index page ||= 1), request_counter %>">
+        <% load_request_controls.each_with_index do |(key, value), index| %>
+          <% next if request.status == index %>
+            <div class="col-md-6">
+              <%= content_tag :button, class: "btn btn-request-control
+                #{value[:btn_class]}", data: {page: cal_request_page_index(page ||= 1),
+                request_counter: request_counter, request_id: request.id,
+                request_index: (cal_request_index (cal_request_page_index page ||= 1),
+                request_counter), request_status: index} do %>
+                <span class="glyphicon <%= value[:glyphicon_class] %>"></span>
+                <%= key.capitalize %>
+              <% end %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <%= request.content %>
+  </div>
+</div>
