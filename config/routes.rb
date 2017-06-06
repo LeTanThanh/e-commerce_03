@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :users
   resources :requests
   resources :products
+  resources :comments
   namespace :admin do
     resources :requests
   end

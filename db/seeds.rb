@@ -56,3 +56,15 @@ orders.each do |order|
   end
   order.update_attributes total_price: total_price
 end
+
+products = Product.all
+products.each do |product|
+  users = []
+  users << User.find(5 + rand(5))
+  users << User.find(10 + rand(5))
+  users << User.find(15 + rand(5))
+  users.each do |user|
+    user.comments.create! product: product, message: FFaker::Lorem.paragraph,
+      created_at: FFaker::Time.datetime
+  end
+end

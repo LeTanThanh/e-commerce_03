@@ -262,3 +262,39 @@ input {
   }
   text-align: center;
 }
+
+.list-comment {
+  list-style: none;
+}
+
+.comment-form {
+  padding: 0 40px 20px;
+}
+
+.new-comment-message {
+  margin-bottom: 10px;
+}
+
+.btn-send-comment {
+  width: 100%;
+}
+
+.comment-user-avatar {
+  img {
+    height: 70px;
+    width: 70px;
+  }
+}
+
+.comment-container {
+  margin-bottom: 10px;
+}
+
+.comment-user-name {
+  font-weight: bold;
+}
+
+.comment-time {
+  color: blue;
+  font-style: italic;
+}
