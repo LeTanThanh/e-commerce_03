@@ -18,8 +18,15 @@ $(document).ready(function(){
       },
       dataType: 'json',
       success: function(response) {
-        newCommentMessage.val('');
-        $('.list-comment').prepend(response.html);
+        var save_success = response.save_success;
+        var html = response.html;
+        if(save_success) {
+          newCommentMessage.val('');
+          $('.list-comment').prepend(html);
+        }
+        else {
+          $('#flash').html(html);
+        }
       }
     });
   });
