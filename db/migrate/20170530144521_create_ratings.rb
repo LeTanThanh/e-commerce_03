@@ -3,7 +3,7 @@ class CreateRatings < ActiveRecord::Migration[5.0]
     create_table :ratings do |t|
       t.integer :user_id
       t.integer :product_id
-      t.float :rating_point
+      t.integer :rating_point
       t.timestamps
     end
   end
