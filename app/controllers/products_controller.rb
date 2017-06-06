@@ -21,24 +21,24 @@ class ProductsController < ApplicationController
     rating_point = (1.0 * total_rating_point / rating_count).round 2
 
     if @product.update_attributes rating_point: rating_point
-      flash[:success] = t "flash.success.send_your_rating_success"
+      flash.now[:success] = t "flash.success.send_your_rating_success"
       respond_to do |format|
         format.js do
           render json: {
             save_success: true,
-            html: rating_point.to_s << " " << t(".points"),
+            html_rating_poin: rating_point.to_s << " " << t(".points"),
             html_flash: render_to_string(partial: "/layouts/flash",
               locals: {flash: flash})
           }
         end
       end
     else
-      flash[:danger] = t "flash.success.send_your_rating_fail"
+      flash.now[:danger] = t "flash.success.send_your_rating_fail"
       respond_to do |format|
         format.js do
           render json: {
             save_success: false,
-            html: render_to_string(partial: "/layouts/flash",
+            html_flash: render_to_string(partial: "/layouts/flash",
               locals: {flash: flash})
           }
         end
