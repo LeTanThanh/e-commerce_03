@@ -18,8 +18,15 @@ $(document).ready(function(){
       },
       dataType: 'json',
       success: function(response) {
-        newCommentMessage.val('');
-        $('.list-comment').prepend(response.html);
+        var save_success = response.save_success;
+        var html = response.html;
+        if(save_success) {
+          newCommentMessage.val('');
+          $('.list-comment').prepend(html);
+        }
+        else {
+          $('#flash').html(html);
+        }
       }
     });
   });
@@ -37,14 +44,10 @@ $(document).ready(function(){
       },
       dataType: 'json',
       success: function(response) {
+        $('#flash').html(response.html_flash);
         var save_success = response.save_success;
-        var html = response.html;
         if(save_success) {
-          $('#rating-point').html(html);
-          $('#flash').html(response.html_flash);
-        }
-        else {
-          $('#flash').html(html);
+          $('#rating-point').html(response.html_rating_poin);
         }
       }
     });

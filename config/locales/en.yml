@@ -5,6 +5,11 @@ en:
         title: "Manage Requests"
         heading: "Manage Requests"
 
+  comments:
+    comment:
+      ago: "ago"
+      commented: "Commented"
+
   dictionary:
     app_name: &app_name "E-Commerce"
     contact: &contact "Contact"
@@ -13,6 +18,7 @@ en:
 
   flash:
     danger:
+      comment_fail_message: "Comment can't blank"
       product_not_found: "Product not found"
       send_your_rating_fail: "Send your rating fail"
       send_your_request_fail: "Send your request fail"

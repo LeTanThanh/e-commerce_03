@@ -38,23 +38,25 @@
           </span>
         </td>
       </tr>
-      <tr>
-        <th><%= t ".you_rate" %></th>
-        <td>
-          <div class="col-md-10 select-rating-point">
-            <%= select_tag :user_rating_point,
-              options_for_select(rating_point_options,
-                current_user.rating_point_product(@product.id)),
-              class: "form-control" %>
-          </div>
-          <div class="col-md-2">
-            <button class="btn btn-primary" id="btn-send-rating"
-              data-product-id="<%= @product.id %>">
-              <%= t ".send_rating" %>
-            </button>
-          </div>
-        </td>
-      </tr>
+      <% if logged_in? %>
+        <tr>
+          <th><%= t ".you_rate" %></th>
+          <td>
+            <div class="col-md-10 select-rating-point">
+              <%= select_tag :user_rating_point,
+                options_for_select(rating_point_options,
+                  current_user.rating_point_product(@product.id)),
+                class: "form-control" %>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-primary" id="btn-send-rating"
+                  data-product-id="<%= @product.id %>">
+                  <%= t ".send_rating" %>
+                </button>
+              </div>
+            </td>
+        </tr>
+    <% end %>
     </table>
   </div>
 </div>
@@ -63,7 +65,7 @@
   <% if logged_in? %>
     <div class="row comment-container comment-form">
       <div class="col-md-1 comment-user-avatar">
-          <%= gravatar_for current_user %>
+        <%= gravatar_for current_user %>
       </div>
       <div class="col-md-11">
         <div class="row">
