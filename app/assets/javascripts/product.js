@@ -17,13 +17,12 @@ $(document).ready(function(){
       dataType: 'json',
       success: function(response) {
         var save_success = response.save_success;
-        var html = response.html;
         if(save_success) {
           newCommentMessage.val('');
-          $('.list-comment').prepend(html);
+          $('.list-comment').prepend(response.html_comment);
         }
         else {
-          $('#flash').html(html);
+          $('#flash').html(response.html_flash);
         }
       }
     });
