@@ -5,6 +5,11 @@ en:
         title: "Manage Requests"
         heading: "Manage Requests"
 
+  comments:
+    comment:
+      ago: "ago"
+      commented: "Commented"
+
   dictionary:
     app_name: &app_name "E-Commerce"
     contact: &contact "Contact"
@@ -13,6 +18,8 @@ en:
 
   flash:
     danger:
+      comment_fail_message: "Comment can't blank"
+      product_not_found: "Product not found"
       send_your_request_fail: "Send your request fail"
       update_request_status_fail: "Update request status fail"
       update_user_fail: "Update user fail"
@@ -54,8 +61,20 @@ en:
   products:
     product:
       available: "available"
-      unit: "VND"
       format: "%n %u"
+      unit: "VND"
+    show:
+      available: "available"
+      button_text: "Send Comment"
+      category: "Category"
+      comments: "Comments"
+      description: "Description"
+      format: "%n %u"
+      price: "Price"
+      product: "product"
+      quantity: "Quantity"
+      unit: "VND"
+      unknow: "Unknow"
 
   requests:
     index:
