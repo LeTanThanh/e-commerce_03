@@ -26,4 +26,8 @@ class Product < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :ratings, dependent: :destroy
   has_many :order_details
+
+  def category_name
+    category ? category.name : I18n.t("products.show.unknow")
+  end
 end

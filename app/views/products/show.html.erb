@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-md-3 product">
+    <%= image_tag @product.picture.url, class: "center-image" %>
+  </div>
+  <div class="col-md-9">
+    <h3><%= @product.name %></h3>
+    <table class="table">
+      <tr>
+        <th><%= t ".category" %></th>
+        <td>
+          <%= @product.category_name %>
+        </td>
+      </tr>
+      <tr>
+        <th><%= t ".price" %></th>
+        <td>
+          <%= number_to_currency @product.price, precision:3, unit: t(".unit"),
+            format: t(".format") %>
+        </td>
+      </tr>
+      <tr>
+        <th><%= t ".quantity" %></th>
+        <td>
+          <%= pluralize @product.quantity, t(".product") %> <%= t ".available" %>
+        </td>
+      </tr>
+      <tr>
+        <th><%= t ".description" %></th>
+        <td>
+          <%= @product.description%>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <h3><%= t ".comments" %></h3>
+  <% if logged_in? %>
+    <div class="row comment-container comment-form">
+      <div class="col-md-1 comment-user-avatar">
+          <%= gravatar_for current_user %>
+      </div>
+      <div class="col-md-11">
+        <div class="row">
+          <span class="comment-user-name">
+            <%= current_user.name %>
+          </span>
+        </div>
+        <div class="row">
+          <textarea class="new-comment-message"></textarea>
+          <button class="btn btn-primary btn-send-comment"
+            data-product-id="<%= @product.id %>">
+            <%= t(".button_text") %>
+          </button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <ul class="list-comment">
+    <%= render @comments %>
+  </ul>
+</div>
