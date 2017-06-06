@@ -51,6 +51,12 @@ en:
       sign_up: "Sign Up"
       users: "Users"
 
+  products:
+    product:
+      available: "available"
+      unit: "VND"
+      format: "%n %u"
+
   requests:
     index:
       heading: "Send Suggest"

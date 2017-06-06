@@ -4,4 +4,16 @@
        <%= image_tag product.picture.url, class: "center-img" %>
     <% end %>
   </div>
+  <div class="row product-info">
+    <p class="product-name">
+      <%= product.name %>
+    </p>
+    <p class="product-price">
+      <%= number_to_currency product.price, precision:3, unit: t(".unit"),
+        format: t(".format") %>
+    </p>
+    <p class="product-quantity">
+      <%= pluralize product.quantity, "product" %> <%= t ".available" %>
+    </p>
+  </div>
 </div>

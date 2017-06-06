@@ -10,7 +10,6 @@ class Product < ApplicationRecord
     length: {maximum: Settings.product.maximum_description_length}
   validates :quantity, presence: true, numericality: {only_integer: true,
     greater_than_or_equal_to: Settings.product.min_quantity}
-  validates :picture, presence: true
 
   mount_uploader :picture, ImageUploader
 

@@ -240,5 +240,25 @@ input {
     width: 200px;
     height: 300px;
   }
-  margin-bottom: 20px;
+}
+
+.product-info {
+  height: 120px;
+  margin: 0 0 5px;
+  p {
+    &.product-name {
+      font-size: 17px;
+      margin: 7px 0 0;
+    }
+    &.product-price {
+      font-size: 15px;
+      font-weight: bold;
+      margin: 5px 0 0;
+    }
+    &.product-quantity {
+      font-size: 13px;
+      margin: 5px 0 0
+    }
+  }
+  text-align: center;
 }
