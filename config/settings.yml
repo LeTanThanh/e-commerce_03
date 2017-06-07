@@ -14,6 +14,9 @@ product:
   min_price: 0
   min_quantity: 1
   min_rating_point: 0
+rating:
+  max_rating_point: 10
+  min_rating_point: 0
 request:
   max_status: 2
   maximum_length_content: 1000

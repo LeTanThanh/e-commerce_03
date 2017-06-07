@@ -47,6 +47,20 @@ class User < ApplicationRecord
     self == user
   end
 
+  def rated_product product_id
+    ratings.find_by product_id: product_id
+  end
+
+  def rating_point_rated_product product_id
+    product = rated_product product_id
+    product ? product.rating_point : 0
+  end
+
+  def id_rated_product product_id
+    product = rated_product product_id
+    product ? product.id : 0
+  end
+
   private
 
   def downcase_email
