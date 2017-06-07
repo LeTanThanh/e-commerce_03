@@ -68,3 +68,17 @@ products.each do |product|
       created_at: FFaker::Time.datetime
   end
 end
+
+products.each do |product|
+  users = []
+  users << User.find(5 + rand(5))
+  users << User.find(10 + rand(5))
+  users << User.find(15 + rand(5))
+  total_rating_point = 0
+  users.each do |user|
+    user_rating_point = rand 11
+    total_rating_point += user_rating_point
+    user.ratings.create! product: product, rating_point: user_rating_point
+  end
+  product.update_attributes rating_point: (total_rating_point / 3.0).round(2)
+end

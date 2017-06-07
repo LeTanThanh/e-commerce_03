@@ -28,6 +28,7 @@ en:
       you_have_to_login: "You have to login"
       you_are_not_admin_user: "You're not admin user"
     success:
+      send_your_rating_success: "Send your rating success"
       send_your_request_success: "Send your request success"
       update_user_success: "Update user success"
       welcome_to_shop: "Welcome to the Shop!"
@@ -70,11 +71,23 @@ en:
       comments: "Comments"
       description: "Description"
       format: "%n %u"
+      points: "points"
       price: "Price"
       product: "product"
       quantity: "Quantity"
+      rating: "Rating"
+      send_rating: "Send Rating"
       unit: "VND"
       unknow: "Unknow"
+      you_rate: "You Rate"
+    update:
+      points: "points"
+
+  ratings:
+    create:
+      points: "points"
+    update:
+      points: "points"
 
   requests:
     index:

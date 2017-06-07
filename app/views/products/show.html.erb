@@ -31,9 +31,34 @@
         </td>
       </tr>
       <tr>
-        <td colspan="2">
+        <th><%= t ".rating" %></th>
+        <td>
+          <span id="rating-point">
+            <%= @product.rating_point%> <%= t ".points" %>
+          </span>
         </td>
       </tr>
+      <% if logged_in? %>
+        <tr>
+          <th><%= t ".you_rate" %></th>
+          <td>
+            <div class="col-md-10 select-rating-point">
+              <%= select_tag :user_rating_point,
+                options_for_select(rating_point_options,
+                  current_user.rating_point_rated_product(@product.id)),
+                class: "form-control" %>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-primary" id="btn-send-rating"
+                  data-product-id="<%= @product.id %>"
+                  data-user-rated="<%= current_user.rated_product @product.id %>",
+                  data-rating-id="<%= current_user.id_rated_product @product.id %>">
+                  <%= t ".send_rating" %>
+                </button>
+              </div>
+            </td>
+        </tr>
+      <% end %>
     </table>
   </div>
 </div>
