@@ -18,8 +18,11 @@ en:
 
   flash:
     danger:
+      cart_full: "Cart full"
       comment_fail_message: "Comment can't blank"
+      product_has_been_in_cart_already: "Product has been in cart already"
       product_not_found: "Product not found"
+      send_your_rating_fail: "Send your rating fail"
       send_your_request_fail: "Send your request fail"
       update_request_status_fail: "Update request status fail"
       update_user_fail: "Update user fail"
@@ -28,6 +31,7 @@ en:
       you_have_to_login: "You have to login"
       you_are_not_admin_user: "You're not admin user"
     success:
+      add_product_to_cart_success: "Add product to cart success"
       send_your_rating_success: "Send your rating success"
       send_your_request_success: "Send your request success"
       update_user_success: "Update user success"
@@ -48,6 +52,7 @@ en:
       about: "About"
       app_name: *app_name
       categories: "Categories"
+      cart: "Cart"
       help: "Help"
       home: "Home"
       import: "Import"
@@ -65,6 +70,7 @@ en:
       format: "%n %u"
       unit: "VND"
     show:
+      add_to_cart: "Add to Cart"
       available: "available"
       button_text: "Send Comment"
       category: "Category"
@@ -167,6 +173,5 @@ en:
     vertical_menu:
       user_profile: "User Profile"
       update_profile: "Update Profile"
-      cart: "Cart"
       orders: "Orders"
       send_suggest: "Send Suggest"

@@ -1,5 +1,7 @@
 category:
   name_max_length: 255
+cart:
+  max_size: 5
 comment:
   maximum_message_length: 1000
 gravatar:
