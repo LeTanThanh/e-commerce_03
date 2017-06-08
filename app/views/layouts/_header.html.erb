@@ -11,9 +11,9 @@
           <%= link_to t(".profile"), current_user %>
         </li>
         <li>
-          <%= link_to "#" do %>
+          <%= link_to show_products_in_cart_path do %>
             <span class="glyphicon glyphicon-shopping-cart"></span>
-            <span class="count-product-in-cart"></span>
+            <span class="count-product-in-cart">0</span>
           <% end %>
         </li>
         <% if current_user.is_admin? %>
