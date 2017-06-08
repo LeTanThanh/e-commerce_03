@@ -7,7 +7,15 @@
       <li><%= link_to t(".contact"), "/contact" %></li>
       <li><%= link_to t(".about"), "/about" %></li>
       <% if logged_in? %>
-        <li><%= link_to t(".profile"), current_user %></li>
+        <li class="user-info" data-user-id="<%= current_user.id %>">
+          <%= link_to t(".profile"), current_user %>
+        </li>
+        <li>
+          <%= link_to "#" do %>
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            <span class="count-product-in-cart"></span>
+          <% end %>
+        </li>
         <% if current_user.is_admin? %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
