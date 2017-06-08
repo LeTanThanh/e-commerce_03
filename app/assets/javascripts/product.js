@@ -127,13 +127,6 @@ $(document).ready(function(){
     }
     return 0;
   }
-
-  function convertToHtmlString(str) {
-    str = str.replace(/&lt;/g, '<');
-    str = str.replace(/&gt;/g, '>');
-    str = str.replace(/&quot;/g, '"');
-    return str
-  }
   
   function reloadCountProductInCart() {
     var userInfo = $('.user-info');

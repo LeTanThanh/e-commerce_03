@@ -5,6 +5,11 @@ en:
         title: "Manage Requests"
         heading: "Manage Requests"
 
+  cart:
+    show:
+      heading: "Cart"
+      title: "Cart"
+
   comments:
     comment:
       ago: "ago"
@@ -34,6 +39,7 @@ en:
       add_product_to_cart_success: "Add product to cart success"
       send_your_rating_success: "Send your rating success"
       send_your_request_success: "Send your request success"
+      update_product_in_cart_success: "Update product in cart success"
       update_user_success: "Update user success"
       welcome_to_shop: "Welcome to the Shop!"
 
@@ -63,6 +69,20 @@ en:
       requests: "Requests"
       sign_up: "Sign Up"
       users: "Users"
+
+  order_details:
+    order_detail:
+      available: "Available"
+      category: "Category: "
+      delete: "Delete"
+      format: "%n %u"
+      not_available: "Not available %{product_quantity} in stock"
+      price: "Price: "
+      product: "product"
+      quantity: "Quantity: "
+      save: "Save"
+      status: "Status: "
+      unit: "VND"
 
   products:
     product:

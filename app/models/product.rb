@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  include ActionView::Helpers::TextHelper
+
   validates :name, presence: true, uniqueness: {case_sensitive: false},
     length: {maximum: Settings.product.maximum_name_length}
   validates :price, numericality: {only_integer: true,
@@ -29,5 +31,18 @@ class Product < ApplicationRecord
 
   def category_name
     category ? category.name : I18n.t("products.show.unknow")
+  end
+
+  def available? order_quantity
+    quantity >= order_quantity ? true : false
+  end
+
+  def status order_quantity
+     if available?(order_quantity)
+       I18n.t("order_details.order_detail.available")
+     else
+       I18n.t("order_details.order_detail.not_available", product_quantity:
+         pluralize(quantity, I18n.t("order_details.order_detail.product")))
+     end
   end
 end

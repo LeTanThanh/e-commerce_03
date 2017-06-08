@@ -9,7 +9,7 @@
       <%= product.name %>
     </p>
     <p class="product-price">
-      <%= number_to_currency product.price, precision:3, unit: t(".unit"),
+      <%= number_to_currency product.price, precision: 0, unit: t(".unit"),
         format: t(".format") %>
     </p>
     <p class="product-quantity">
