@@ -7,8 +7,12 @@ en:
 
   cart:
     show:
+      format: "%n %u"
       heading: "Cart"
+      order_now: "Order Now"
       title: "Cart"
+      'total': "Total"
+      unit: "VND"
 
   comments:
     comment:
@@ -23,6 +27,7 @@ en:
 
   flash:
     danger:
+      can_not_order_now: "Can't order now"
       cart_full: "Cart full"
       comment_fail_message: "Comment can't blank"
       product_has_been_in_cart_already: "Product has been in cart already"
@@ -38,6 +43,7 @@ en:
     success:
       add_product_to_cart_success: "Add product to cart success"
       delete_product_in_cart_flash: "Delete product in cart success"
+      order_success: "Order success"
       send_your_rating_success: "Send your rating success"
       send_your_request_success: "Send your request success"
       update_product_in_cart_success: "Update product in cart success"

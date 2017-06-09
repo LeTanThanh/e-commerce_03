@@ -11,7 +11,7 @@
         <button class="btn btn-danger btn-delete-product-in-cart"
           data-user-id="<%= current_user.id %>"
           data-product-id="<%= order_detail.product_id %>"
-          data-delete-product-in-cart-flash="<%= update_product_quantity_flash %>">
+          data-delete-product-in-cart-flash="<%= delete_product_in_cart_flash%>">
           <span class="glyphicon glyphicon-trash"></span>
           <%= t ".delete" %>
         </button>

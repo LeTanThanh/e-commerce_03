@@ -11,11 +11,14 @@ Rails.application.routes.draw do
   get "/cart", to: "cart#show", as: :show_products_in_cart
   get "/order_details/get_product_status", to: "order_details#get_product_status",
     as: :get_product_status
+  get "/order_details/get_total_price", to: "order_details#get_total_price",
+    as: :get_total_price
   resources :users
   resources :requests
   resources :products
   resources :comments
   resources :ratings
+  resources :orders
   namespace :admin do
     resources :requests
   end

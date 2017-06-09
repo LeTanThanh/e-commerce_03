@@ -50,11 +50,11 @@ orders.each do |order|
   products.each do |product|
     price = product.price
     quantity = 1 + rand(3)
-    total_price += price * quantity
+    #total_price += price * quantity
     order.order_details.create! order: order, product: product,
       price: price, quantity: quantity
   end
-  order.update_attributes total_price: total_price
+  #order.update_attributes total_price: total_price
 end
 
 products = Product.all
