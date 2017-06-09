@@ -10,3 +10,15 @@ function convertToHtmlString(str) {
   str = str.replace(/&quot;/g, '"');
   return str
 }
+
+function cartSize(userId) {
+  var cart = Cookies.getJSON("cart");
+  if (cart){
+    var cartUser = cart[userId];
+    if (cartUser) {
+      return Object.keys(cartUser).length;
+    }
+    return 0;
+  }
+  return 0;
+}

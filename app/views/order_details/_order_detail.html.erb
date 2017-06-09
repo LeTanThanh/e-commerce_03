@@ -1,4 +1,4 @@
-<div class="row in-cart">
+<div class="row in-cart" id="product-in-cart-<%= order_detail.product_id %>">
   <div class="col-md-2 product">
     <%= image_tag order_detail.product_picture.url, class: "center-image" %>
   </div>
@@ -8,7 +8,10 @@
         <h4><%= order_detail.product_name %></h4>
       </div>
       <div class="col-md-3 delete-product-in-cart-container">
-        <button class="btn btn-danger">
+        <button class="btn btn-danger btn-delete-product-in-cart"
+          data-user-id="<%= current_user.id %>"
+          data-product-id="<%= order_detail.product_id %>"
+          data-delete-product-in-cart-flash="<%= update_product_quantity_flash %>">
           <span class="glyphicon glyphicon-trash"></span>
           <%= t ".delete" %>
         </button>
