@@ -13,6 +13,7 @@ product:
   max_rating_point: 10
   maximum_description_length: 1000
   maximum_name_length: 255
+  maximum_recent_viewed_product: 8
   min_price: 0
   min_quantity: 1
   min_rating_point: 0

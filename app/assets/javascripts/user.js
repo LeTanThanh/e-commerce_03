@@ -8,8 +8,9 @@ $(document).ready(function(){
     menuIndex = 3;
   } else if (path == '/requests') {
     menuIndex = 4;
-  }
-  else {
+  } else if (path == '/recent_viewed_products') {
+      menuIndex = 5;
+  } else {
     var parameters = path.split('/');
     if (parameters[1] == 'users') {
       if (parameters.length == 3) {

@@ -134,6 +134,9 @@ en:
       unit: "VND"
       unknow: "Unknow"
       you_rate: "You Rate"
+    recent_viewed_products:
+      heading: "Recent Viewed"
+      title: "Recent Viewed"
     update:
       points: "points"
 
@@ -222,4 +225,5 @@ en:
       user_profile: "User Profile"
       update_profile: "Update Profile"
       orders: "Orders"
+      recent_viewed: "Recent Viewed"
       send_suggest: "Send Suggest"

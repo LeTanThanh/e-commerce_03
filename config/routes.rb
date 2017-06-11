@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     as: :get_product_status
   get "/order_details/get_total_price", to: "order_details#get_total_price",
     as: :get_total_price
+  get "/recent_viewed_products", to: "products#index", as: :recent_viewed_products
   resources :users
   resources :requests
   resources :products
