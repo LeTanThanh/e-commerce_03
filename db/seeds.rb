@@ -12,7 +12,7 @@ users = User.all
 users.each do |user|
   5.times do
     user.requests.create! content: FFaker::Lorem.paragraph, status: rand(3),
-      created_at: FFaker::Time.datetime
+      created_at: FFaker::Time.between(2.years.ago,  Time.now)
   end
 end
 
@@ -36,7 +36,7 @@ end
 
 users.each do |user|
   3.times do
-    user.orders.create! total_price: 0
+    user.orders.create! total_price: 0, status: rand(4), created_at: FFaker::Time.between(2.years.ago,  Time.now)
   end
 end
 
@@ -50,11 +50,9 @@ orders.each do |order|
   products.each do |product|
     price = product.price
     quantity = 1 + rand(3)
-    #total_price += price * quantity
     order.order_details.create! order: order, product: product,
       price: price, quantity: quantity
   end
-  #order.update_attributes total_price: total_price
 end
 
 products = Product.all
@@ -65,7 +63,7 @@ products.each do |product|
   users << User.find(15 + rand(5))
   users.each do |user|
     user.comments.create! product: product, message: FFaker::Lorem.paragraph,
-      created_at: FFaker::Time.datetime
+      created_at: FFaker::Time.between(2.years.ago,  Time.now)
   end
 end
 

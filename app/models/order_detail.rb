@@ -15,7 +15,7 @@ class OrderDetail < ApplicationRecord
   end
 
   def update_product_order_quantity
-    quantity = product.quantity - order_quantity
-    product.update_attributes quantity: quantity
+    product_quantity = product.quantity - quantity
+    product.update_attributes quantity: product_quantity
   end
 end

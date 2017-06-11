@@ -1,0 +1,45 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <div class="row order-heading">
+      <div class="col-md-10">
+        <div class="row">
+          <span class="glyphicon glyphicon-gift"></span>
+          <%= t ".order_id" %> <%= order.id %>
+          <span class="order-status <%= Order.order_statuses.key(order.status) %>">
+            <%= Order.order_statuses.key(order.status).upcase %>
+          </span>
+        </div>
+        <div class="row">
+          <%= t ".ordered_at" %> <%= time_ago_in_words order.created_at %> <%= t ".ago" %>
+        </div>
+      </div>
+      <div class="col-md-2 view-details-order">
+        <button class="btn btn-default btn-view-details-order"
+          data-toggle="modal" data-target="#order-<%= order.id %>">
+          <span class="glyphicon glyphicon-eye-open"></span> <%= t ".view_details" %>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <%= t ".total" %><%= number_to_currency order.total_price, precision:0, unit: t(".unit"), format: t(".format") %>
+  </div>
+</div>
+<div id="order-<%= order.id %>" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%= t ".order_details" %></h4>
+      </div>
+      <div class="modal-body">
+        <%= render partial: "order_details/order_detail", collection: order.order_details %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          <%= t ".close" %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,7 +11,7 @@ en:
       heading: "Cart"
       order_now: "Order Now"
       title: "Cart"
-      'total': "Total"
+      total: "Total"
       unit: "VND"
 
   comments:
@@ -77,8 +77,29 @@ en:
       sign_up: "Sign Up"
       users: "Users"
 
+  orders:
+    index:
+      title: "Orders"
+      heading: "Orders"
+    order:
+      ago: "ago"
+      close: "Close"
+      format: "%n %u"
+      order_id: "Order Id: "
+      order_details: "Order Details"
+      ordered_at: "Ordered at:"
+      total: "Total: "
+      unit: "VND"
+      view_details: "View details"
+
   order_details:
     order_detail:
+      category: "Category: "
+      format: "%n %u"
+      price: "Price: "
+      quantity: "Quantity: "
+      unit: "VND"
+    order_detail_in_cart:
       available: "Available"
       category: "Category: "
       delete: "Delete"

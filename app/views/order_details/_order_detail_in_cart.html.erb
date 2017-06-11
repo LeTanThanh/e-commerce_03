@@ -1,0 +1,65 @@
+<div class="row in-cart" id="product-in-cart-<%= order_detail_in_cart.product_id %>">
+  <div class="col-md-2 product">
+    <%= image_tag order_detail_in_cart.product_picture.url, class: "center-image" %>
+  </div>
+  <div class="col-md-10">
+    <div class="row">
+      <div class="col-md-9">
+        <h4><%= order_detail_in_cart.product_name %></h4>
+      </div>
+      <div class="col-md-3 delete-product-in-cart-container">
+        <button class="btn btn-danger btn-delete-product-in-cart"
+          data-user-id="<%= current_user.id %>"
+          data-product-id="<%= order_detail_in_cart.product_id %>"
+          data-delete-product-in-cart-flash="<%= delete_product_in_cart_flash%>">
+          <span class="glyphicon glyphicon-trash"></span>
+          <%= t ".delete" %>
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <%= t ".category" %>
+      </div>
+      <div class="col-md-7">
+        <%= order_detail_in_cart.product_category_name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <%= t ".status" %>
+      </div>
+      <div class="col-md-7" id="product-status-<%= order_detail_in_cart.product_id %>">
+        <%= order_detail_in_cart.product_status order_detail_in_cart.quantity %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <%= t ".price" %>
+      </div>
+      <div class="col-md-7">
+        <%= number_to_currency order_detail_in_cart.price, precision:0, unit: t(".unit"),
+          format: t(".format") %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <%= t ".quantity" %>
+      </div>
+      <div class="col-md-7">
+        <%= select_tag :product_quantity,
+          options_for_select(product_quantity_options,order_detail_in_cart.quantity),
+          class: "form-control product-quantity-#{order_detail_in_cart.product_id}" %>
+      </div>
+      <div class="col-md-3 update-product-quantity-container">
+        <button class="btn btn-primary btn-update-product-quantity"
+          data-user-id="<%= current_user.id %>"
+          data-product-id="<%= order_detail_in_cart.product_id %>"
+          data-update-product-quantity-flash="<%= update_product_quantity_flash %>">
+          <span class="glyphicon glyphicon-refresh"></span>
+          <%= t ".save" %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

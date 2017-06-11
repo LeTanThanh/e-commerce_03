@@ -1,6 +1,14 @@
 class OrdersController < ApplicationController
   include CartHelper
 
+  before_action :verify_login_user!, only: :show
+
+  def index
+    @orders = current_user.orders.select(:id, :total_price, :status, :created_at)
+      .order(created_at: :desc)
+      .paginate page: params[:page], per_page: Settings.will_paginate.per_page_order
+  end
+
   def create
     order_details = load_order_details_in_cart current_user.id
     order_details.each do |order_detail|

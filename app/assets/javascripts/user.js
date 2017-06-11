@@ -4,6 +4,8 @@ $(document).ready(function(){
 
   if (path == '/cart') {
     menuIndex = 2;
+  } else if (path == '/orders') {
+    menuIndex = 3;
   } else if (path == '/requests') {
     menuIndex = 4;
   }

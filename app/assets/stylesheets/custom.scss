@@ -390,3 +390,47 @@ input {
 .btn-order-now {
   width: 100%;
 }
+
+.order-heading {
+  margin: 0;
+}
+
+.order-status {
+  border-radius: 5px;
+  padding: 3px 5px;
+  &.cancel {
+    background: $mexican-red;
+    color: white;
+  }
+  &.done {
+    background: $fern;
+    color: white;
+  }
+  &.inprogress {
+    background: white;
+    color: $strong-mine-shaft;
+  }
+  &.sending {
+    background: orange;
+    color: $strong-mine-shaft;
+  }
+}
+
+.view-details-order {
+  padding: 0;
+}
+
+.btn-view-details-order {
+  width: 100%
+}
+
+.ordered-product-image {
+  padding: 0 0 10px;
+  img {
+    width: 100%;
+  }
+}
+
+.order-detail-container {
+  padding: 0 10px;
+}

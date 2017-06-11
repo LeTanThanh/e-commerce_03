@@ -39,10 +39,10 @@ class Product < ApplicationRecord
 
   def status order_quantity
      if available?(order_quantity)
-       I18n.t("order_details.order_detail.available")
+       I18n.t("order_details.order_detail_in_cart.available")
      else
-       I18n.t("order_details.order_detail.not_available", product_quantity:
-         pluralize(quantity, I18n.t("order_details.order_detail.product")))
+       I18n.t("order_details.order_detail_in_cart.not_available", product_quantity:
+         pluralize(quantity, I18n.t("order_details.order_detail_in_cart.product")))
      end
   end
 end

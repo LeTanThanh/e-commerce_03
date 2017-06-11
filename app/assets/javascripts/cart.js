@@ -45,10 +45,13 @@ $(document).ready(function(){
       success: function(response) {
         $('#flash').html(response.html_flash);
         if (response.order_success) {
-          console.log("success");
           var cart = Cookies.getJSON('cart');
           delete cart[userId];
-          Cookies.set('cart', cart);
+          if (Object.keys(cart).length == 0) {
+            Cookies.remove('cart');
+          } else {
+            Cookies.set('cart', cart);
+          }
           $('.in-cart').slideUp();
           $('.count-product-in-cart').html(0);
           updateTotalPrice();
