@@ -21,4 +21,25 @@ $(document).ready(function(){
     });
     $('#flash').html(convertToHtmlString(updateProductQuantityFlash));
   });
+
+  $('.btn-delete-product-in-cart').on('click', function() {
+    var userId = $(this).data('user-id');
+    var productId = $(this).data('product-id');
+    var deleteProductInCartFlash = $(this).data('delete-product-in-cart-flash');
+    var cart = Cookies.getJSON('cart');
+    delete cart[userId][productId];
+
+    if (Object.keys(cart[userId]).length == 0) {
+      delete cart[userId]
+    }
+    if (Object.keys(cart).length == 0) {
+      Cookies.remove('cart');
+    } else {
+      Cookies.set('cart', cart);
+    }
+
+    $('#product-in-cart-' + productId).slideUp();
+    $('.count-product-in-cart').html(cartSize(userId));
+    $('#flash').html(convertToHtmlString(deleteProductInCartFlash));
+  });
 });

@@ -23,6 +23,12 @@ module CartHelper
     CGI::escapeHTML html
   end
 
+  def delete_product_in_cart_flash
+    html = ActionController::Base.new().render_to_string partial: "/layouts/flash",
+      locals: {flash: {success: I18n.t("flash.success.delete_product_in_cart_flash")}}
+    CGI::escapeHTML html
+  end
+
   def load_order_details_in_cart user_id
     order_details = []
     if cookies[:cart]
