@@ -116,18 +116,6 @@ $(document).ready(function(){
     }
   }
   
-  function cartSize(userId) {
-    var cart = Cookies.getJSON("cart");
-    if (cart){
-      var cartUser = cart[userId];
-      if (cartUser) {
-        return Object.keys(cartUser).length;
-      }
-      return 0;
-    }
-    return 0;
-  }
-  
   function reloadCountProductInCart() {
     var userInfo = $('.user-info');
     var countProductInCart = 0;
