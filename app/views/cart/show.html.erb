@@ -21,6 +21,21 @@
         <%= render partial: "order_details/order_detail",
           collection: @order_details %>
       </div>
+      <div class="col-md-3 order-now-container">
+        <div class="row total">
+          <%= t ".total" %>
+        </div>
+        <div class="row order-total-price">
+          <%= number_to_currency total_price(@order_details), precision:0,
+            unit: t(".unit"), format: t(".format") %>
+        </div>
+        <div class="row order-now-button">
+          <button class="btn btn-success btn-order-now"
+            data-user-id="<%= current_user.id %>">
+            <span class="glyphicon glyphicon-gift"></span> <%= t ".order_now" %>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

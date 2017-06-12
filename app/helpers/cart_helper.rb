@@ -29,11 +29,17 @@ module CartHelper
     CGI::escapeHTML html
   end
 
+  def order_success_flash
+    html = ActionController::Base.new().render_to_string partial: "/layouts/flash",
+      locals: {flash: {success: I18n.t("flash.success.delete_product_in_cart_flash")}}
+    CGI::escapeHTML html
+  end
+
   def load_order_details_in_cart user_id
     order_details = []
     if cookies[:cart]
       cart = JSON.parse cookies[:cart]
-      load_cart cart, user_id.to_s, order_details
+      load_cart cart, user_id.to_s, order_details if cart
     end
     cookies.permanent[:cart] = JSON.generate cart
     order_details
@@ -50,5 +56,13 @@ module CartHelper
         cart[user_id].delete key
       end
     end
+  end
+
+  def total_price order_details
+    total_price = 0
+    order_details.each do |order_detail|
+      total_price += order_detail.price * order_detail.quantity
+    end
+    total_price
   end
 end

@@ -32,8 +32,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
   letter-spacing: -2px;
+  font-size: 3em;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -363,4 +363,30 @@ input {
 
 .update-product-quantity-container {
   padding: 0;
+}
+
+.order-now-container {
+  border-radius: 5px;
+  border: 2px solid lightgray;
+  margin-left: 15px;
+}
+
+.total {
+  padding: 10px;
+}
+
+.order-total-price {
+  color: blue;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0 10px;
+  text-align:center;
+}
+
+.order-now-button {
+  padding: 10px;
+}
+
+.btn-order-now {
+  width: 100%;
 }
