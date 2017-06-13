@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var menuIndex = 0;
+  var menuIndex = -1;
   var path = window.location.pathname;
 
   if (path == '/cart') {
@@ -16,5 +16,8 @@ $(document).ready(function(){
       }
     }
   }
-  $($('.vertical-menu').children().get(menuIndex)).addClass('active');
+
+  if (menuIndex != -1) {
+    $($('.vertical-menu').children().get(menuIndex)).addClass('active');
+  }
 });

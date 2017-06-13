@@ -127,6 +127,25 @@ aside {
   }
 }
 
+.user-info-container {
+  font-size: 1.5em;
+  img {
+    margin-left: -15px;
+  }
+  letter-spacing: -1px;
+  margin: 0 0 3px;
+  text-align: left;
+  span {
+    margin-left: 10px;
+    &.name {
+      font-size: 1.0em;
+    }
+    &.email {
+      font-size: 0.8em;
+    }
+  }
+}
+
 .gravatar {
   float: left;
   margin-right: 10px;
@@ -390,3 +409,8 @@ input {
 .btn-order-now {
   width: 100%;
 }
+
+.search-user-container {
+  margin-bottom: 10px;
+}
+

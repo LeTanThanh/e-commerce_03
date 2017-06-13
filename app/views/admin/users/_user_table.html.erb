@@ -1,0 +1,14 @@
+<div class="row">
+  <table class="table user-table">
+    <thead>
+      <th><%= t ".no" %></th>
+      <th><%= t ".email" %></th>
+      <th><%= t ".name" %></th>
+      <th><%= t ".sign_up" %></th>
+      <th><%= t ".action" %></th>
+    </thead>
+    <tbody>
+      <%= render partial: "admin/users/user", collection: users %>
+    </tbody>
+  </table>
+</div>

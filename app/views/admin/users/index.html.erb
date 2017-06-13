@@ -1,0 +1,38 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <aside class="col-md-3">
+    <section class="user-info">
+      <div class="user-info-container">
+        <div class="col-md-3">
+          <%= gravatar_for current_user %>
+        </div>
+        <div class="col-md-9">
+          <span class="name"><%= current_user.name %></span>
+          <span class="email"><%= current_user.email %></span>
+        </div>
+      </div>
+    </section>
+    <%= render partial: "admin/vertical_menu" %>
+  </aside>
+  <div class="col-md-9">
+    <h1><%= t ".heading" %></h1>
+    <div class="row search-user-container">
+      <div class="input-group">
+        <input type="text" class="form-control search-user-input"
+          placeholder="<%= t ".enter_user_email_or_user_name" %>"
+          value="<%= search_user_input_value params[:input] %>">
+        <span class="input-group-btn">
+          <button class="btn btn-default btn-search-user" type="button">
+            <span class="glyphicon glyphicon-search"></span> <%= t ".search" %>
+          </button>
+        </span>
+      </div>
+    </div>
+    <div class="user-table-container">
+      <%= render partial: "admin/users/user_table", locals: {users: @users} %>
+    </div>
+    <div class="user-paginate">
+      <%= render partial: "admin/users/user_paginate", locals: {users: @users} %>
+    </div>
+  </div>
+</div>
