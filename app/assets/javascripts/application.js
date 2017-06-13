@@ -12,7 +12,7 @@ function convertToHtmlString(str) {
 }
 
 function cartSize(userId) {
-  var cart = Cookies.getJSON("cart");
+  var cart = Cookies.getJSON('cart');
   if (cart){
     var cartUser = cart[userId];
     if (cartUser) {
