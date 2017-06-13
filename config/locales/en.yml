@@ -1,5 +1,26 @@
 en:
   admin:
+    orders:
+      index:
+        all_status: "all status"
+        enter_user_name: "Enter user name ..."
+        heading: "Manage Orders"
+        search: "Search"
+        title: "Manage Orders"
+      order:
+        format: "%n %u"
+        unit: "VND"
+        view_details: "View Details"
+      order_detail:
+        format: "%n %u"
+        unit: "VND"
+      order_table:
+        no: "No"
+        ordered_by: "Ordered by"
+        order_at: "Order at"
+        total: "Total"
+        status: "Status"
+        view_details: "View Details"
     requests:
       index:
         title: "Manage Requests"
@@ -55,6 +76,7 @@ en:
       product_not_found: "Product not found"
       send_your_rating_fail: "Send your rating fail"
       send_your_request_fail: "Send your request fail"
+      update_order_status_fail: "Update order status fail"
       update_request_status_fail: "Update request status fail"
       update_user_fail: "Update user fail"
       user_not_found: "User not found"
@@ -68,12 +90,14 @@ en:
       order_success: "Order success"
       send_your_rating_success: "Send your rating success"
       send_your_request_success: "Send your request success"
+      update_order_status_success: "Update order status success"
       update_product_in_cart_success: "Update product in cart success"
       update_user_success: "Update user success"
       welcome_to_shop: "Welcome to the Shop!"
 
   layouts:
     application:
+      app_title: "E-Commerce"
       app_title: "E-Commerce"
     footer:
       about: "About"

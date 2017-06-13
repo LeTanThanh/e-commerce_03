@@ -1,0 +1,39 @@
+<tr>
+  <td><%= admin_no params[:page], order_counter %></td>
+  <td><%= order.user.name %></td>
+  <td><%= order.created_at.to_date %></td>
+  <td>
+    <%= number_to_currency order.total_price, precision: 0, format: t(".format"),
+      unit: t(".unit") %>
+  </td>
+  <td>
+    <%= select_tag :order_status, options_for_select(order_status_options, order.status),
+      class: "form-control input-sm select-order-status order-#{order.id}",
+      data: {order_id: order.id, current_status: order.status} %>
+  </td>
+  <td>
+    <%= button_tag class: "btn btn-primary btn-sm", data: {toggle: "modal",
+      target: ".detail-order-#{order.id}"} do %>
+      <span class="glyphicon glyphicon-eye-open"></span> <%= t ".view_details" %>
+    <% end %>
+  </td>
+</tr>
+
+<div class="modal fade detail-order-<%= order.id %>" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%= t ".order_details" %></h4>
+      </div>
+      <div class="modal-body">
+        <%= render partial: "admin/orders/order_detail", collection: order.order_details %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          <%= t ".close" %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

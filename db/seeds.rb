@@ -36,7 +36,8 @@ end
 
 users.each do |user|
   3.times do
-    user.orders.create! total_price: 0
+    user.orders.create! created_at: FFaker::Time.between(2.years.ago, Time.now),
+      status: rand(4)
   end
 end
 
