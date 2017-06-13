@@ -4,6 +4,26 @@ en:
       index:
         title: "Manage Requests"
         heading: "Manage Requests"
+    users:
+      index:
+        action: "Action"
+        email: "Email"
+        enter_user_email_or_user_name: "Enter user email or user name..."
+        heading: "Manage Users"
+        name: "Name"
+        no: "No"
+        sign_up: "Sign up"
+        search: "Search"
+        title: "Manage Users"
+      user:
+        delete: "Delete"
+    vertical_menu:
+      categories: "Categories"
+      import: "Import"
+      orders: "Orders"
+      products: "Products"
+      requests: "Requests"
+      users: "Users"
 
   cart:
     show:
@@ -30,6 +50,7 @@ en:
       can_not_order_now: "Can't order now"
       cart_full: "Cart full"
       comment_fail_message: "Comment can't blank"
+      delete_user_fail: "Delete user fail"
       product_has_been_in_cart_already: "Product has been in cart already"
       product_not_found: "Product not found"
       send_your_rating_fail: "Send your rating fail"
@@ -43,6 +64,7 @@ en:
     success:
       add_product_to_cart_success: "Add product to cart success"
       delete_product_in_cart_flash: "Delete product in cart success"
+      delete_user_success: "Delete user success"
       order_success: "Order success"
       send_your_rating_success: "Send your rating success"
       send_your_request_success: "Send your request success"

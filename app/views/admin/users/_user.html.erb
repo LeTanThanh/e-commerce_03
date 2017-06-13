@@ -1,0 +1,25 @@
+<tr class="user-row-<%= user.id %>">
+  <td class="user-no">
+    <%= admin_no params[:page], user_counter %>
+  </td>
+  <td>
+    <%= user.email %>
+  </td>
+  <td>
+    <%= user.name %>
+  </td>
+  <td>
+    <%= user.created_at.to_date %>
+  </td>
+  <td>
+    <% unless user.is_admin? %>
+      <button class="btn btn-sm btn-danger btn-delete-user"
+        data-user-id="<%= user.id %>"
+        data-page="<%= admin_page params[:page] %>"
+        data-per-page="<%= Settings.will_paginate.per_page %>"
+        data-input="<%= search_user_input_value params[:input] %>">
+        <span class="glyphicon glyphicon-trash"></span> <%= t ".delete" %>
+      </button>
+    <% end %>
+  </td>
+</tr>

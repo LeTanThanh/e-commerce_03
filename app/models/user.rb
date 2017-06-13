@@ -16,6 +16,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  scope :search, -> input {where "name LIKE '%#{input}%' OR email LIKE '%#{input}%'"}
+
   class << self
     def digest string
     cost = ActiveModel::SecurePassword.min_cost ?

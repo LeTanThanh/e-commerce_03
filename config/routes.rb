@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "/order_details/show", to: "order_details#show",
     as: :get_product_status
   get "/orders", to: "orders#update", as: :get_total_price
+  delete "/admin/users", to: "admin/users#destroy"
   resources :users
   resources :requests
   resources :products
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
   resources :orders
   namespace :admin do
     resources :requests
+    resources :users, only: :index
   end
   get "/*page", to: "static_pages#show"
 end
