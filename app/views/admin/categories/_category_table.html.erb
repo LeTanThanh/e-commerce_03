@@ -1,0 +1,13 @@
+<table class="table category-table">
+  <thead>
+    <th><%= t ".no" %></th>
+    <th><%= t ".name" %></th>
+    <th><%= t ".total_product" %></th>
+    <th><%= t ".last_update" %></th>
+    <th><%= t ".edit" %></th>
+    <th><%= t ".delete" %></th>
+  </thead>
+  <tbody>
+    <%= render partial: "admin/categories/category", collection: categories %>
+  </tbody>
+</table>

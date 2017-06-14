@@ -38,7 +38,7 @@ class Admin::UsersController < ApplicationController
             html_flash: render_to_string(partial: "layouts/flash",
               locals: {flash: flash}),
             html_user: render_to_string(partial: "admin/users/user",
-              locals: {user: @user, user_counter: 9, params: params}),
+              locals: {user: @user, user_counter: Settings.will_paginate.per_page - 1, params: params}),
           }
         end
       end
