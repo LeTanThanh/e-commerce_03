@@ -3,4 +3,8 @@ class Category < ApplicationRecord
     length: {maximum: Settings.category.name_max_length}
 
   has_many :products
+
+  scope :search, -> input do
+    where "name LIKE '%#{input}%'"
+  end
 end

@@ -1,0 +1,59 @@
+<tr class="category-<%= category.id %>">
+  <td class="category-no">
+    <%= admin_no params[:page], category_counter %>
+  </td>
+  <td><%= category.name %></td>
+  <td><%= category.products.size %></td>
+  <td><%= category.updated_at.to_date %></td>
+  <td>
+    <button class="btn btn-info btn-sm" data-toggle="modal"
+      data-target=".update-category-modal-<%= category.id %>">
+      <span class="glyphicon glyphicon-edit"></span> <%= t ".edit" %>
+    </button>
+  </td>
+  <td>
+    <button class="btn btn-danger btn-sm btn-delete-category"
+      data-category-id="<%= category.id %>"
+      data-page="<%= admin_page params[:page] %>"
+      data-per-page="<%= Settings.will_paginate.per_page %>"
+      data-input="<%= search_category_input_value params[:input] %>">
+      <span class="glyphicon glyphicon-trash"></span> <%= t ".delete" %>
+    </button>
+  </td>
+</tr>
+
+<div class="modal fade update-category-modal-<%= category.id %>" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%= t ".edit_category" %></h4>
+      </div>
+      <div class="modal-body">
+        <div class="update-category-flash">
+        </div>
+        <div class="update-category-errors">
+        </div>
+        <div>
+          <label>
+            <%= t ".category_name" %> <span class="text-danger">*</span>
+          </label>
+          <input type="text" class="input-edit-category-name-<%= category.id %>
+            form-control" value="<%= category.name %>">
+          <button class="btn btn-info btn-add-new-category btn-edit-category-in-modal"
+            data-category-id="<%= category.id %>"
+            data-category-counter="<%= category_counter %>"
+            data-page="<%= admin_page params[:page] %>">
+            <span class="glyphicon glyphicon-edit"></span> <%= t ".edit_category" %>
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-close-edit-category-modal"
+          data-dismiss="modal">
+          <%= t ".close" %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

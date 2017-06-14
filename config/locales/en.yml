@@ -1,5 +1,25 @@
 en:
   admin:
+    categories:
+      category:
+        category_name: "Category Name"
+        delete: "Delete"
+        edit: "Edit"
+        edit_category: "Edit Category"
+      category_table:
+        delete: "Delete"
+        edit: "Edit"
+        last_update: "Last Update"
+        name: "Name"
+        no: "No"
+        total_product: "Total Product"
+      index:
+        add_new_category: "Add new category"
+        category_name: "Category Name"
+        close: "Close"
+        enter_category_name: "Enter category name..."
+        heading: "Manage Categories"
+        title: "Manage Categories"
     orders:
       index:
         all_status: "all status"
@@ -71,11 +91,14 @@ en:
       can_not_order_now: "Can't order now"
       cart_full: "Cart full"
       comment_fail_message: "Comment can't blank"
+      create_category_fail: "Create category fail"
+      delete_category_fail: "Delete category fail"
       delete_user_fail: "Delete user fail"
       product_has_been_in_cart_already: "Product has been in cart already"
       product_not_found: "Product not found"
       send_your_rating_fail: "Send your rating fail"
       send_your_request_fail: "Send your request fail"
+      update_category_fail: "Update category fail"
       update_order_status_fail: "Update order status fail"
       update_request_status_fail: "Update request status fail"
       update_user_fail: "Update user fail"
@@ -85,11 +108,14 @@ en:
       you_are_not_admin_user: "You're not admin user"
     success:
       add_product_to_cart_success: "Add product to cart success"
+      create_category_success: "Create category success"
+      delete_category_success: "Delete category success"
       delete_product_in_cart_flash: "Delete product in cart success"
       delete_user_success: "Delete user success"
       order_success: "Order success"
       send_your_rating_success: "Send your rating success"
       send_your_request_success: "Send your request success"
+      update_category_success: "Update category success"
       update_order_status_success: "Update order status success"
       update_product_in_cart_success: "Update product in cart success"
       update_user_success: "Update user success"

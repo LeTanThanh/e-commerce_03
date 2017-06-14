@@ -12,25 +12,28 @@ users = User.all
 users.each do |user|
   5.times do
     user.requests.create! content: FFaker::Lorem.paragraph, status: rand(3),
-      created_at: FFaker::Time.datetime
+      created_at: FFaker::Time.between(2.years.ago, Time.now)
   end
 end
 
-5.times do
-  Category.create! name: FFaker::Product::brand
+20.times do
+  date_time = FFaker::Time.between(2.years.ago, Time.now)
+  Category.create! name: FFaker::Product::brand, created_at: date_time,
+    updated_at: date_time
 end
 
 categories = Category.all
 categories.each do |category|
-  20.times do
+  (1 + rand(10)).times do
     name = FFaker::Product.product
     price = 1000 * (rand(50) + 50)
     quantity = (rand(10) + 10)
     picture = File.open(File.join Rails.root,
       "/app/assets/images/seed/product/#{rand 10}.jpg")
     description = FFaker::Lorem.paragraph
+    created_at = FFaker::Time.between(2.years.ago, Time.now)
     category.products.create! name: name, price: price, picture: picture,
-      quantity: quantity, description: description
+      quantity: quantity, description: description, created_at: created_at
   end
 end
 

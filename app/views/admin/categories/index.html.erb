@@ -1,0 +1,80 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <aside class="col-md-3">
+    <section class="user-info">
+      <div class="user-info-container">
+        <div class="col-md-3">
+          <%= gravatar_for current_user %>
+        </div>
+        <div class="col-md-9">
+          <span class="name"><%= current_user.name %></span>
+          <span class="email"><%= current_user.email %></span>
+        </div>
+      </div>
+    </section>
+    <%= render partial: "admin/vertical_menu" %>
+  </aside>
+  <div class="col-md-9">
+    <h1><%= t ".heading" %></h1>
+    <div class="row category-container">
+      <div class="col-md-6">
+        <div class="input-group">
+          <input type="text" class="form-control input-search-category"
+            placeholder="<%= t ".enter_category_name" %>"
+            value="<%= search_category_input_value params[:input] %>">
+        <span class="input-group-btn">
+          <button class="btn btn-default btn-search-category" type="button">
+            <span class="glyphicon glyphicon-search"></span> <%= t ".search" %>
+          </button>
+        </span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <button class="btn btn-success btn-add-new-category" data-toggle="modal"
+          data-target=".create-new-category-modal">
+          <span class="glyphicon glyphicon-plus"></span> <%= t ".add_new_category" %>
+        </button>
+      </div>
+    </div>
+    <div class="category-table-container">
+      <%= render partial: "admin/categories/category_table",
+        locals: {categories: @categories} %>
+    </div>
+    <div class="category-paginate">
+      <%= render partial: "admin/categories/category_paginate",
+        locals: {categories: @categories} %>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade create-new-category-modal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%= t ".add_new_category" %></h4>
+      </div>
+      <div class="modal-body">
+        <div class="create-new-category-flash">
+        </div>
+        <div class="create-new-category-errors">
+        </div>
+        <div>
+          <label>
+            <%= t ".category_name" %> <span class="text-danger">*</span>
+          </label>
+          <input type="text" class="form-control input-new-category-name">
+          <button class="btn btn-success btn-add-new-category btn-add-new-category-in-modal">
+            <span class="glyphicon glyphicon-plus"></span> <%= t ".add_new_category" %>
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-close-new-category-modal"
+          data-dismiss="modal">
+          <%= t ".close" %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
