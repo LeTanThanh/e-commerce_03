@@ -1,0 +1,13 @@
+<table class="table">
+  <thead>
+    <th><%= t ".no" %></th>
+    <th><%= t ".ordered_by" %></th>
+    <th><%= t ".order_at" %></th>
+    <th><%= t ".total" %></th>
+    <th><%= t ".status" %></th>
+    <th><%= t ".view_details" %></th>
+  </thead>
+  <tbody>
+    <%= render partial: "admin/orders/order", collection: orders %>
+  </tbody>
+</table>

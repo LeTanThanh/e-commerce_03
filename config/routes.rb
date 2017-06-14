@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     as: :get_product_status
   get "/orders", to: "orders#update", as: :get_total_price
   delete "/admin/users", to: "admin/users#destroy"
+  patch "/admin/orders", to: "admin/orders#update"
   resources :users
   resources :requests
   resources :products
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :requests
     resources :users, only: :index
+    resources :orders, only: :index
   end
   get "/*page", to: "static_pages#show"
 end

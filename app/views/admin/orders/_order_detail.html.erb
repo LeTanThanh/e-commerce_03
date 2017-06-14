@@ -1,0 +1,39 @@
+<div class="order-detail-container">
+  <div class="row in-cart admin-order-detail">
+    <div class="col-md-2 ordered-product-image">
+      <%= image_tag order_detail.product_picture.url, class: "center-image" %>
+    </div>
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-9">
+          <h4><%= order_detail.product_name %></h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <%= t ".category" %>
+        </div>
+        <div class="col-md-7">
+          <%= order_detail.product_category_name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <%= t ".price" %>
+        </div>
+        <div class="col-md-7">
+          <%= number_to_currency order_detail.price, precision:0, unit: t(".unit"),
+            format: t(".format") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <%= t ".quantity" %>
+        </div>
+        <div class="col-md-7">
+          <%= order_detail.quantity %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

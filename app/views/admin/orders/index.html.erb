@@ -1,0 +1,46 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <aside class="col-md-3">
+    <section class="user-info">
+      <div class="user-info-container">
+        <div class="col-md-3">
+          <%= gravatar_for current_user %>
+        </div>
+        <div class="col-md-9">
+          <span class="name"><%= current_user.name %></span>
+          <span class="email"><%= current_user.email %></span>
+        </div>
+      </div>
+    </section>
+    <%= render partial: "admin/vertical_menu" %>
+  </aside>
+  <div class="col-md-9">
+    <h1><%= t ".heading" %></h1>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="input-group">
+          <input type="text" class="form-control search-order-by-user-input"
+            placeholder="<%= t ".enter_user_name" %>"
+            value="<%= search_order_user_input_value params[:user] %>">
+          <span class="input-group-btn">
+            <button class="btn btn-default btn-search-order-by-user" type="button">
+              <span class="glyphicon glyphicon-search"></span> <%= t ".search" %>
+            </button>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <%= select_tag :order_status_params, options_for_select(search_order_status_params,
+          search_order_status_select_value(params[:status])),
+          class: "form-control select-search-order-by-status" %>
+      </div>
+    </div>
+    <div class="order-table">
+      <%= render partial: "admin/orders/order_table", locals: {orders: @orders} %>
+    </div>
+    <div class="order-paginate">
+      <%= render partial: "admin/orders/order_paginate",
+        locals: {orders: @orders} %>
+    </div>
+  </div>
+</div>
