@@ -1,0 +1,23 @@
+<tr>
+  <td><%= admin_no params[:page], product_counter %></td>
+  <td><%= link_to product.name, product %></td>
+  <td><%= image_tag product.picture.url, class: "admin-produc-image" %></td>
+  <td><%= product.category_name %></td>
+  <td>
+    <%= number_to_currency product.price, prrecision: 0, unit: t(".unit"),
+      format: t(".format") %>
+  </td>
+  <td><%= product.quantity %></td>
+  <td><%= product.rating_point %></td>
+  <td><%= product.updated_at.to_date %></td>
+  <td>
+    <button class="btn btn-info btn-sm">
+      <span class="glyphicon glyphicon-edit"></span> <%= t ".edit" %>
+    </button>
+  </td>
+  <td>
+    <button class="btn btn-danger btn-sm btn-delete-category">
+      <span class="glyphicon glyphicon-trash"></span> <%= t ".delete" %>
+    </button>
+  </td>
+</tr>

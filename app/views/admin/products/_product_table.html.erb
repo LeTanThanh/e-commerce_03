@@ -1,0 +1,17 @@
+<table class="table">
+  <thead>
+    <th><%= t ".no" %></th>
+    <th><%= t ".name" %></th>
+    <th><%= t ".image" %></th>
+    <th><%= t ".category" %></th>
+    <th><%= t ".price" %></th>
+    <th><%= t ".quantity" %></th>
+    <th><%= t ".rating" %></th>
+    <th><%= t ".last_update" %></th>
+    <th><%= t ".edit" %></th>
+    <th><%= t ".delete" %></th>
+  </thead>
+  <tbody>
+    <%= render partial: "admin/products/product", collection: products %>
+  </tbody>
+</table>

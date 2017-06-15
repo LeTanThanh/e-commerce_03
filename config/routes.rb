@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     resources :users, only: :index
     resources :orders, only: :index
     resources :categories, except: [:new, :show, :edit]
+    resources :products
   end
   get "/*page", to: "static_pages#show"
 end

@@ -24,7 +24,7 @@ end
 
 categories = Category.all
 categories.each do |category|
-  (1 + rand(10)).times do
+  (10 + rand(10)).times do
     name = FFaker::Product.product
     price = 1000 * (rand(50) + 50)
     quantity = (rand(10) + 10)

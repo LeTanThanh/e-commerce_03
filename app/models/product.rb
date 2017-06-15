@@ -3,12 +3,12 @@ class Product < ApplicationRecord
 
   validates :name, presence: true, uniqueness: {case_sensitive: false},
     length: {maximum: Settings.product.maximum_name_length}
-  validates :price, numericality: {only_integer: true,
+  validates :price, presence: true, numericality: {only_integer: true,
     greater_than_or_equal_to: Settings.product.min_price}
   validates :rating_point,
     numericality: {greater_than_or_equal_to: Settings.product.min_rating_point,
       less_than_or_equal_to: Settings.product.max_rating_point}
-  validates :description, presence: true,
+  validates :description,
     length: {maximum: Settings.product.maximum_description_length}
   validates :quantity, presence: true, numericality: {only_integer: true,
     greater_than_or_equal_to: Settings.product.min_quantity}
@@ -22,6 +22,17 @@ class Product < ApplicationRecord
       .group("products.id")
       .order("count(*) DESC")
       .limit(Settings.product.limit_hot_trend_product)
+  end
+
+  scope :search, -> name, category_id do
+    case category_id
+      when 0
+        where "name LIKE '%#{name}%'"
+      when -1
+        where "name LIKE '%#{name}%' AND category_id IS NULL"
+      else
+        where "name LIKE '%#{name}%' AND category_id = #{category_id}"
+    end
   end
 
   belongs_to :category

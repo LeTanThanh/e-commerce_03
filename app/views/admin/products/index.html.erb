@@ -1,0 +1,115 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <aside class="col-md-3">
+    <section class="user-info">
+      <div class="user-info-container">
+        <div class="col-md-3">
+          <%= gravatar_for current_user %>
+        </div>
+        <div class="col-md-9">
+          <span class="name"><%= current_user.name %></span>
+          <span class="email"><%= current_user.email %></span>
+        </div>
+      </div>
+    </section>
+    <%= render partial: "admin/vertical_menu" %>
+  </aside>
+  <div class="col-md-9">
+    <h1><%= t ".heading" %></h1>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="input-group">
+          <input type="text" class="form-control input-search-product-by-name"
+            placeholder="<%= t ".enter_product_name" %>"
+            value="<%= input_search_product_by_name_value params[:product_name] %>">
+        <span class="input-group-btn">
+          <button class="btn btn-default btn-search-product-by-name" type="button">
+            <span class="glyphicon glyphicon-search"></span> <%= t ".search" %>
+          </button>
+        </span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <%= select_tag :product_name,
+          options_for_select(select_search_product_by_category_id_values,
+            select_search_product_by_category_id_selected(params[:category_id])),
+          class: "form-control select-search-product-by-category-id" %>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-success btn-add-new-product" data-toggle="modal"
+          data-target=".create-new-product-modal">
+          <span class="glyphicon glyphicon-plus"></span> <%= t ".add_new_product" %>
+        </button>
+      </div>
+    </div>
+    <div class="product-table-container">
+      <%= render partial: "admin/products/product_table",
+        locals: {products: @products} %>
+    </div>
+    <div class="product-paginate">
+      <%= render partial: "admin/products/product_paginate",
+        locals: {products: @products} %>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade create-new-product-modal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%= t ".add_new_product" %></h4>
+      </div>
+      <div class="modal-body">
+        <div class="create-new-product-flash">
+        </div>
+        <div class="create-new-product-errors">
+        </div>
+        <div>
+          <label>
+            <%= t ".product_name" %> <span class="text-danger">*</span>
+          </label>
+          <input type="text" class="form-control input-new-product-name">
+          <label>
+            <%= t ".category_name" %>
+          </label>
+          <%= select_tag :select_new_product_category_id,
+            options_for_select(select_new_product_by_category_id_values, nil),
+            class: "form-control select-new-product-category-id" %>
+          <label>
+            <%= t ".price" %> <span class="text-danger">*</span>
+          </label>
+          <input type="number" min="0" max="1000" value="0"
+            class="form-control input-new-product-price">
+          <label>
+            <%= t ".quantity" %> <span class="text-danger">*</span>
+          </label>
+          <input type="number" min="0" max="1000" value="0"
+            class="form-control input-new-product-quantity">
+          <label>
+            <%= t ".description" %> <span class="text-danger">*</span>
+          </label>
+          <textarea class="form-control textarea-new-product-description"
+            placeholder="<%= t ".enter_product_description" %>"><%= t ".no_description_is_available" %>
+          </textarea>
+          <label><%= t ".image" %></label>
+          <input type="file", accept="image/jpeg,image/gif,image/png",
+            class="form-control input-new-product-picture"
+            data-max-size="<%= Settings.product.maximum_file_size %>"/>
+          <%= image_tag "fallback/no_picture_available.jpg",
+            class: "image-new-product-image" %>
+          <button class="btn btn-success btn-add-new-product
+            btn-add-new-product-in-modal">
+            <span class="glyphicon glyphicon-plus"></span> <%= t ".add_new_product" %>
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-close-new-category-modal"
+          data-dismiss="modal">
+          <%= t ".close" %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

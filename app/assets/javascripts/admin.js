@@ -48,6 +48,30 @@ $(document).ready(function(){
   $(document).on('click', '.btn-delete-category', function() {
     btnDeleteCategoryClick($(this));
   });
+  
+  $('.btn-search-product-by-name').on('click', function() {
+    searchProductByNameAndCategoryId();
+  });
+
+  $('.select-search-product-by-category-id').on('change', function() {
+    searchProductByNameAndCategoryId();
+  });
+  
+  $('.btn-add-new-product-in-modal').on('click', function() {
+    var name = $('.input-new-product-name').val();
+    var categoryId = $('.select-new-product-category-id').val();
+    var price = $('.input-new-product-price').val();
+    var quantity = $('.input-new-product-quantity').val();
+    var description = $('.textarea-new-product-description').val();
+    var picture = $('.input-new-product-picture').val();
+  });
+
+  $('.input-new-product-picture').bind('change', function() {
+    var fileName = this.files[0].name;
+    var fileSize = this.files[0].size;
+    var maxSize = $(this).data('max-size');
+    $('.image-new-product-image').attr('src', "../assets/seed/product/" + fileName);
+  })
 });
 
 function addActiveClassToMenu() {
@@ -60,6 +84,8 @@ function addActiveClassToMenu() {
     menuIndex = 1;
   } else if (path == '/admin/categories') {
     menuIndex = 2;
+  } else if (path == '/admin/products') {
+    menuIndex = 3
   } else if (path == '/admin/orders') {
     menuIndex = 4;
   }
@@ -225,7 +251,7 @@ function btnEditCategoryInModal(btn) {
       $('.update-category-flash').html(response.html_flash);
       if (response.update_category_success) {
         $('.update-category-errors').html('');
-        $('.category-modal-' + categoryId).replaceWith(response.html_category);
+        $('.category-' + categoryId).replaceWith(response.html_category);
       }
       else {
         $('.update-category-errors').html(response.html_errors);
@@ -279,6 +305,25 @@ function btnDeleteCategoryClick(btn) {
           $(this).html((page - 1) * perPage + index + 1);
         })
       }
+    }
+  });
+}
+
+function searchProductByNameAndCategoryId() {
+  var productName = $('.input-search-product-by-name').val();
+  var categoryId = $('.select-search-product-by-category-id').val();
+
+  $.ajax({
+    type: 'GET',
+    url: '/admin/products',
+    data: {
+      product_name: productName,
+      category_id: categoryId
+    },
+    dataType: 'json',
+    success: function(response) {
+      $('.product-table-container').html(response.html_product_table_container);
+      $('.product-paginate').html(response.html_product_paginate);
     }
   });
 }

@@ -15,11 +15,13 @@ en:
         total_product: "Total Product"
       index:
         add_new_category: "Add new category"
+        all_category: "All Category"
         category_name: "Category Name"
         close: "Close"
         enter_category_name: "Enter category name..."
         heading: "Manage Categories"
         title: "Manage Categories"
+        un_known: "Unknown"
     orders:
       index:
         all_status: "all status"
@@ -41,6 +43,35 @@ en:
         total: "Total"
         status: "Status"
         view_details: "View Details"
+    products:
+      index:
+        add_new_product: "Add New Product"
+        category_name: "Category Name"
+        description: "Description"
+        enter_product_description: "Enter product description ..."
+        enter_product_name: "Enter product name ..."
+        heading: "Manage Products"
+        image: "Image"
+        no_description_is_available: "No description is available"
+        price: "Price (.000 VND)"
+        product_name: "Product Name"
+        quantity: "Quantity"
+        search: "Search"
+        title: "Manage Products"
+      product:
+        format: "%n %u"
+        unit: "VND"
+      product_table:
+        category: "Category"
+        delete: "Delete"
+        edit: "Edit"
+        image: "Image"
+        last_update: "Last Update"
+        name: "Name"
+        no: "No"
+        price: "Price"
+        quantity: "Quantity"
+        rating: "Rating"
     requests:
       index:
         title: "Manage Requests"
